@@ -3,525 +3,317 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Areshey's Secret Garden ❤️</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali ❤️ Areshey | A Little Universe</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#f3d5a0;--pink:#ffb9d0;--cream:#fff1df}
 body{
- margin:0;
- background:#07150f;
- color:#fff2df;
- font-family:'Cormorant Garamond',serif;
- text-align:center;
- overflow-x:hidden;
+ background:#080916;color:white;font-family:Montserrat,sans-serif;
+ overflow-x:hidden;min-height:100vh;
 }
-
-button{font-family:inherit;cursor:pointer}
-
-.hero{
- min-height:100vh;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- padding:25px;
- background:
- radial-gradient(ellipse at center,#28402c 0%,#101e17 48%,#050d09 100%);
- position:relative;
- overflow:hidden;
+body:before{
+ content:"";position:fixed;inset:0;z-index:-3;
+ background:radial-gradient(ellipse at 50% 20%,#332449,#111326 50%,#070914);
 }
-
-.eyebrow{
- letter-spacing:5px;
- color:#e5c88d;
- font-size:12px;
+#stars,#effects{position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden}
+.star{position:absolute;background:white;border-radius:50%;animation:twinkle 2s infinite alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
+@keyframes float{50%{transform:translateY(-15px)}}
+@keyframes glow{50%{text-shadow:0 0 35px #ff9ec7,0 0 65px #dca7ff}}
+@keyframes enter{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(600deg);opacity:0}}
+@keyframes pulse{50%{transform:scale(1.12);filter:brightness(1.3)}}
+@keyframes fireworks{0%{transform:scale(.1);opacity:1}100%{transform:scale(1.8);opacity:0}}
+.page{
+ display:none;min-height:100svh;padding:70px 20px 110px;
+ text-align:center;position:relative;align-items:center;
+ justify-content:center;flex-direction:column;
 }
-
-.hero h1{
- font-family:'Dancing Script',cursive;
- font-size:clamp(48px,12vw,85px);
- color:#f7dba9;
- text-shadow:0 0 30px #e8b95c88;
- margin:20px 0;
+.page.active{display:flex;animation:enter .9s ease both}
+.script{font-family:'Great Vibes',cursive;color:var(--gold)}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:400}
+h1{font-size:clamp(52px,13vw,95px)}
+h2{font-size:clamp(38px,9vw,65px)}
+p{color:#ded7e4;font-size:14px;line-height:1.9}
+.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#eacb9e}
+.divider{height:1px;width:90px;margin:24px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+button{
+ border:1px solid #f1d1a0;color:#1b1420;
+ background:linear-gradient(135deg,#f6dcb3,#d69eb7);
+ padding:15px 27px;border-radius:40px;
+ font-size:11px;letter-spacing:1.5px;font-weight:600;
+ margin:12px 5px;cursor:pointer;transition:.3s;
 }
-
-.hero p{font-size:21px;color:#e9ddca}
-
-.goldbtn{
- border:1px solid #e7c88e;
- background:linear-gradient(120deg,#b58b48,#f0d8a4);
- color:#172017;
- padding:15px 30px;
- border-radius:40px;
- font-size:17px;
- margin-top:20px;
- box-shadow:0 0 25px #c49a4a55;
+button:active{transform:scale(.94)}
+button:hover{box-shadow:0 0 30px #e9b9d877;transform:translateY(-3px)}
+.secondary{background:#ffffff0b;color:#f4d8b0}
+.nav{
+ position:fixed;bottom:0;left:0;width:100%;z-index:20;
+ padding:12px 12px calc(12px + env(safe-area-inset-bottom));
+ display:flex;justify-content:center;gap:12px;
+ background:linear-gradient(transparent,#080916ee 35%);
 }
-
-.section{
- padding:75px 18px;
- max-width:850px;
- margin:auto;
+.nav button{margin:0;padding:13px 23px}
+.progress{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:30;width:20%;transition:width .6s}
+.brand{font-size:10px;letter-spacing:3px;color:#d6b9cf;margin-bottom:22px}
+.heroMoon{font-size:75px;filter:drop-shadow(0 0 30px #ffdbab);animation:float 4s infinite}
+.heroTitle{animation:glow 3s infinite alternate}
+.heroNames{font-size:clamp(18px,5vw,25px);letter-spacing:3px;color:#f5d5b0}
+.heroText{max-width:320px;margin:16px auto}
+.glass{
+ width:min(100%,440px);padding:25px 20px;border:1px solid #ffffff20;
+ background:linear-gradient(145deg,#ffffff12,#ffffff04);
+ border-radius:25px;box-shadow:0 15px 60px #0005;
 }
-
-.heading{
- font-family:'Dancing Script',cursive;
- font-size:43px;
- color:#eacb8c;
-}
-
-.sub{
- color:#cbbca5;
- font-size:19px;
- line-height:1.7;
-}
-
-.garden{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:14px;
- max-width:600px;
- margin:35px auto;
-}
-
-.flowercard{
- background:#ffffff0b;
- border:1px solid #d9c08b44;
- border-radius:22px;
- padding:22px 8px;
- transition:.3s;
- cursor:pointer;
-}
-
-.flowercard:active{transform:scale(.95)}
-
+.garden{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:28px auto;max-width:430px}
 .flower{
- font-size:55px;
- display:block;
- filter:drop-shadow(0 0 13px #ffc2dc77);
- animation:sway 3s ease-in-out infinite;
+ min-height:120px;border:1px solid #e9c7a044;border-radius:20px;
+ background:linear-gradient(145deg,#ffffff13,#ffffff04);
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ cursor:pointer;transition:.3s;padding:8px;
 }
-
-.flowercard h3{
- color:#eacb8c;
- font-size:22px;
- margin-bottom:5px;
+.flower:active{transform:scale(.9)}
+.flower .emoji{font-size:42px;filter:drop-shadow(0 0 10px #ff9cce);animation:float 3s infinite}
+.flower small{font-size:9px;color:#edcfaa;letter-spacing:1px;margin-top:8px}
+.message{
+ padding:18px;margin:15px auto;max-width:360px;
+ border:1px solid #edc9a877;border-radius:18px;
+ background:#ffffff10;color:#ffe5c9;font-family:'Cormorant Garamond',serif;
+ font-size:23px;line-height:1.5;animation:enter .5s ease;
 }
-
-.flowercard p{
- color:#c9bba6;
- font-size:15px;
+.foodImg{
+ width:100%;height:220px;object-fit:cover;border-radius:18px;
+ margin:15px 0;box-shadow:0 12px 30px #0007;
 }
-
-@keyframes sway{
- 0%,100%{transform:rotate(-7deg)}
- 50%{transform:rotate(7deg)}
+.foodCard{max-width:400px;width:100%;margin:22px auto;padding:20px}
+.pepsiCan{
+ width:80px;height:145px;margin:15px auto;border-radius:17px 17px 12px 12px;
+ background:linear-gradient(100deg,#0a2a80,#1469d5 45%,#08235c);
+ border:2px solid #b9c8e8;box-shadow:inset -8px 0 12px #0005,0 12px 25px #0008;
+ display:flex;align-items:center;justify-content:center;
+ position:relative;transform:rotate(-5deg);
 }
-
-.messagebox{
- display:none;
- margin:20px auto;
- max-width:450px;
- background:#f6ead3;
- color:#493322;
- border-radius:16px;
- padding:25px;
- font-family:'Dancing Script',cursive;
- font-size:25px;
- box-shadow:0 10px 40px #0007;
+.pepsiCan:before{content:"";position:absolute;top:-5px;width:35px;height:7px;border-radius:5px;background:#b6c5d7}
+.pepsiLogo{
+ background:white;color:#073b8b;border-radius:50%;width:56px;height:56px;
+ display:flex;align-items:center;justify-content:center;font-weight:900;
+ font-size:18px;transform:rotate(5deg);
 }
-
-.letter-area{
- padding:65px 16px;
- background:linear-gradient(#102319,#09150e);
-}
-
+.foodExtras{display:flex;justify-content:center;gap:35px;margin:20px}
+.foodExtras div{font-size:35px}
+.foodExtras small{display:block;font-size:10px;color:#e9c99c;margin-top:6px}
 .envelope{
- max-width:360px;
- margin:35px auto;
- padding:40px 15px;
- border-radius:12px;
- background:linear-gradient(135deg,#8b3e4c,#49212e);
- border:1px solid #eacb8c;
- box-shadow:0 15px 50px #0008;
+ font-size:85px;cursor:pointer;display:inline-block;
+ filter:drop-shadow(0 0 20px #ffc2da);animation:pulse 2s infinite;
 }
-
-.envelope-icon{
- font-size:75px;
- animation:sway 3s infinite;
-}
-
 .letter{
- display:none;
- max-width:570px;
- margin:25px auto;
- background:#f3e5c9;
- color:#483322;
- padding:35px 24px;
- border-radius:4px;
- text-align:left;
- box-shadow:0 15px 50px #0009;
- position:relative;
+ max-width:480px;text-align:left;margin:20px auto;padding:28px 23px;
+ background:linear-gradient(135deg,#fff0d5,#e5cba8);
+ color:#604a3a;box-shadow:0 15px 45px #0008;transform:rotate(-.5deg);
 }
-
-.letter:before{
- content:'✿';
- position:absolute;
- right:15px;
- top:10px;
- color:#a76c5b;
- font-size:25px;
+.letter p{font-family:'Cormorant Garamond',serif;color:#604a3a;font-size:19px;line-height:1.75}
+.letter .script{font-size:35px;color:#96644f}
+.finalHeart{font-size:75px;animation:pulse 1.5s infinite;filter:drop-shadow(0 0 25px #ff74b5)}
+.finalNames{font-size:clamp(42px,10vw,75px);animation:glow 2s infinite alternate}
+.finalCard{max-width:400px;padding:25px;border:1px solid #f0c9df66;background:#ffffff0a;border-radius:24px}
+.particle{position:absolute;font-size:20px;pointer-events:none;animation:fall 6s linear forwards}
+.spark{
+ position:fixed;width:8px;height:8px;border:2px solid #ffe1ae;
+ border-radius:50%;animation:fireworks 1.5s ease-out forwards;
 }
-
-.letter h2{
- font-family:'Dancing Script',cursive;
- font-size:34px;
- color:#773d45;
- text-align:center;
-}
-
-.handwriting{
- font-family:'Dancing Script',cursive;
- font-size:22px;
- line-height:1.85;
-}
-
-.signature{
- text-align:right;
- font-family:'Dancing Script',cursive;
- font-size:34px;
- color:#843c4c;
-}
-
-.dinner{
- background:#14281c;
- border:1px solid #d6bb8044;
- border-radius:24px;
- padding:25px;
- margin:25px auto;
- max-width:450px;
-}
-
-.dinner .foodicon{font-size:60px}
-
-.final{
- min-height:80vh;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- padding:40px 20px;
- background:radial-gradient(circle,#2c3e2b,#07130c 75%);
-}
-
-.final h2{
- font-family:'Dancing Script',cursive;
- font-size:48px;
- color:#f2d59c;
-}
-
-#finalMessage{
- font-family:'Dancing Script',cursive;
- font-size:30px;
- color:#ffdbac;
- margin-top:25px;
-}
-
-.petals{
- position:fixed;
- top:-30px;
- z-index:20;
- pointer-events:none;
- animation:fall linear forwards;
-}
-
-@keyframes fall{
- to{transform:translateY(110vh) rotate(600deg);opacity:0}
-}
-
-footer{
- padding:35px;
- color:#c8b995;
-}
-
-.hidden{display:none!important}
-
-@media(min-width:650px){
- .garden{grid-template-columns:repeat(3,1fr)}
- .letter{padding:45px}
-}
+footer{color:#a99eae;font-size:10px;letter-spacing:2px;margin-top:35px}
+@media(max-width:370px){.garden{gap:7px}.flower{min-height:105px}.flower .emoji{font-size:34px}}
 </style>
 </head>
-
 <body>
+<div id="stars"></div>
+<div id="effects"></div>
+<div class="progress" id="progress"></div>
 
-<!-- OPENING -->
-<section class="hero">
- <div class="eyebrow">A LITTLE WORLD MADE WITH LOVE</div>
- <h1>Areshey 🌷</h1>
- <p>Some things are better felt than explained.</p>
- <p>Welcome to your little secret garden.</p>
- <button class="goldbtn" onclick="enterGarden()">
- Enter Your Garden ✨
- </button>
+<!-- PAGE 1 -->
+<section class="page active" id="page0">
+ <div class="heroMoon">🌙</div>
+ <div class="eyebrow">A little universe made with care</div>
+ <h1 class="script heroTitle">Areshey...</h1>
+ <div class="divider"></div>
+ <div class="heroNames">ALI <span style="color:#ff9ec7">♥</span> ARESHEY</div>
+ <p class="heroText">Tonight, a tiny world has been created. Not to impress you, but to make you smile.</p>
+ <button onclick="go(1)">OPEN YOUR LITTLE UNIVERSE ✨</button>
+ <footer>MADE WITH SINCERITY · FROM ALI</footer>
 </section>
 
-<!-- GARDEN -->
-<section class="section" id="garden">
- <h2 class="heading">A Garden Just For You</h2>
- <p class="sub">
- Every flower has a little thought hidden inside.
- Touch any flower and discover it.
- </p>
-
+<!-- PAGE 2 -->
+<section class="page" id="page1">
+ <div class="brand">ALI × ARESHEY · CHAPTER 01</div>
+ <div class="eyebrow">A garden full of little thoughts</div>
+ <h2 class="script">A garden for Areshey</h2>
+ <p>Every flower has a little message from Ali. Tap one to discover it.</p>
  <div class="garden">
-  <div class="flowercard" onclick="showFlower(0)">
-   <span class="flower">🌹</span>
-   <h3>Rose</h3>
-   <p>A little thought</p>
-  </div>
-
-  <div class="flowercard" onclick="showFlower(1)">
-   <span class="flower">🌷</span>
-   <h3>Tulip</h3>
-   <p>A little reminder</p>
-  </div>
-
-  <div class="flowercard" onclick="showFlower(2)">
-   <span class="flower">🌻</span>
-   <h3>Sunflower</h3>
-   <p>A little hope</p>
-  </div>
-
-  <div class="flowercard" onclick="showFlower(3)">
-   <span class="flower">🌸</span>
-   <h3>Blossom</h3>
-   <p>A little wish</p>
-  </div>
-
-  <div class="flowercard" onclick="showFlower(4)">
-   <span class="flower">🪻</span>
-   <h3>Lavender</h3>
-   <p>A little peace</p>
-  </div>
-
-  <div class="flowercard" onclick="showFlower(5)">
-   <span class="flower">💐</span>
-   <h3>Bouquet</h3>
-   <p>One last thought</p>
-  </div>
+  <div class="flower" onclick="flower(0)"><span class="emoji">🌹</span><small>A THOUGHT</small></div>
+  <div class="flower" onclick="flower(1)"><span class="emoji">🌷</span><small>A WISH</small></div>
+  <div class="flower" onclick="flower(2)"><span class="emoji">🌻</span><small>A SMILE</small></div>
+  <div class="flower" onclick="flower(3)"><span class="emoji">🌸</span><small>A REMINDER</small></div>
+  <div class="flower" onclick="flower(4)"><span class="emoji">💐</span><small>JUST BECAUSE</small></div>
+  <div class="flower" onclick="flower(5)"><span class="emoji">🪻</span><small>A SECRET</small></div>
  </div>
-
- <div class="messagebox" id="flowerMessage"></div>
+ <div class="message" id="flowerMessage">Choose a flower, Areshey 🌷</div>
+ <p style="font-size:11px">A LITTLE GARDEN FROM ALI, WITH CARE.</p>
 </section>
 
-<!-- LETTER -->
-<section class="letter-area">
- <h2 class="heading">Something I Never Said</h2>
- <p class="sub">There are a few words I wanted you to read.</p>
-
- <div class="envelope" id="envelope">
-  <div class="envelope-icon">💌</div>
-  <h2 style="font-family:'Dancing Script';color:#ffe2ad">
-   A letter for Areshey
-  </h2>
-  <p>A little something from Ali.</p>
-  <button class="goldbtn" onclick="openLetter()">
-   Open My Letter ❤️
-  </button>
- </div>
-
- <article class="letter" id="letter">
-  <h2>To Areshey,</h2>
-
-  <div class="handwriting">
-   I don't really know where to begin,
-   because some feelings are difficult to put into words.
-
-   <br><br>
-
-   I didn't make this little world to impress you
-   with beautiful colours, flowers or a few lines
-   on a screen. I made it because sometimes
-   I have things in my heart that I cannot
-   explain properly when I speak.
-
-   <br><br>
-
-   I know you don't like compliments,
-   so I won't fill this letter with them.
-
-   I just want you to know something.
-
-   <br><br>
-
-   You don't always have to be happy.
-   You don't always have to have the right words.
-   You don't have to pretend that everything
-   is okay when it isn't.
-
-   <br><br>
-
-   You can have your quiet days,
-   your confusing moments, your little moods
-   and your own way of seeing the world.
-   I don't expect you to be someone else
-   just to make things easier for me.
-
-   <br><br>
-
-   I know I cannot understand every thought
-   in your mind, and I won't pretend that I can.
-   But I would always like to try.
-
-   <br><br>
-
-   Maybe that's what makes something meaningful:
-   not finding someone perfect,
-   but finding someone whose feelings
-   you genuinely want to understand.
-
-   <br><br>
-
-   I don't know what tomorrow holds for us.
-   I don't know what answer you have in your heart,
-   and I don't want this letter to make you feel
-   that you owe me one.
-
-   <br><br>
-
-   If your answer is yes, I'll value that sincerely.
-
-   And if your answer is no, I'll still be grateful
-   that I got the chance to make something
-   special for you.
-
-   <br><br>
-
-   But before you close this letter,
-   I want you to remember one thing:
-
-   <br><br>
-
-   <strong>
-   You were never just a name on a screen to me.
-   You were someone I wanted to make a little
-   effort for, even if all I could do was create
-   a small world of flowers and words.
-   </strong>
-
-   <br><br>
-
-   I hope one day, when you see flowers,
-   you remember this little surprise and smile.
-
-   <br><br>
-
-   Not because you had to.
-
-   Just because you wanted to.
+<!-- PAGE 3 -->
+<section class="page" id="page2">
+ <div class="brand">ALI × ARESHEY · CHAPTER 02</div>
+ <div class="eyebrow">Something delicious is waiting</div>
+ <h2 class="script">Dinner date?</h2>
+ <p>A little food surprise, inspired by your choice. 🍕</p>
+ <div class="glass foodCard">
+  <div class="eyebrow">THE STAR OF THE EVENING</div>
+  <img class="foodImg" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900" alt="Cheesy pizza">
+  <h2 style="font-size:35px">Cheeseburger Pizza</h2>
+  <p>Cheesy, delicious, loaded with that cheeseburger flavour. Just the kind of dinner you mentioned.</p>
+  <div class="divider"></div>
+  <div class="foodExtras">
+   <div>🥗<small>FRESH SALAD</small></div>
+   <div><div class="pepsiCan"><span class="pepsiLogo">Pepsi</span></div><small>PEPSI</small></div>
   </div>
+  <p style="color:#f2d5a9">Good food. A peaceful evening. No rush. ❤️</p>
+ </div>
+ <p style="font-size:11px">ALI REMEMBERED THE LITTLE DETAILS, ARESHEY.</p>
+</section>
 
-  <p class="signature">
-   With sincerity,<br>
-   Ali ❤️
+<!-- PAGE 4 -->
+<section class="page" id="page3">
+ <div class="brand">ALI × ARESHEY · CHAPTER 03</div>
+ <div class="eyebrow">A few words from Ali</div>
+ <h2 class="script">A letter for you</h2>
+ <p>Some feelings are easier to write than to say.</p>
+ <div style="margin:25px">
+  <div class="envelope" onclick="openLetter()">💌</div>
+  <p style="font-size:10px;letter-spacing:2px">TAP TO OPEN YOUR LETTER</p>
+ </div>
+ <div class="letter" id="letter" style="display:none">
+  <div class="script">Dear Areshey,</div>
+  <p>
+   I don't really know where to begin, because some feelings are difficult to put into words.<br><br>
+   I didn't make this little universe to impress you with beautiful colours, flowers or a few lines on a screen. I made it because sometimes I have things in my heart that I cannot explain properly when I speak.<br><br>
+   I know you don't like compliments, so I won't fill this letter with them.<br><br>
+   You don't always have to be happy. You don't always have to have the right words. You can have your quiet days, your confusing moments and your own way of seeing the world. You don't have to pretend to be someone else.<br><br>
+   I cannot understand every thought in your mind, and I won't pretend that I can. But I would always like to try.<br><br>
+   I don't know what tomorrow holds for us. I don't know what answer you have in your heart, and I don't want this letter to make you feel that you owe me one.<br><br>
+   If your answer is yes, I'll value that sincerely. And if your answer is no, I'll still be grateful that I got the chance to make something special for you.<br><br>
+   I hope one day, when you see flowers, you remember this little surprise and smile. Not because you had to. Just because you wanted to.
   </p>
- </article>
-</section>
-
-<!-- SPECIAL TREAT -->
-<section class="section">
- <h2 class="heading">A Little Something Else 🍕</h2>
- <p class="sub">
- Because a little surprise should have a little treat too.
- </p>
-
- <div class="dinner">
-  <div class="foodicon">🍕</div>
-  <h2>Cheeseburger Pizza</h2>
-  <p>Extra cheese, delicious toppings and lots of love.</p>
-  <div class="foodicon">🌹</div>
-  <p>A little flower bouquet for you.</p>
+  <div class="script" style="text-align:right;margin-top:20px">With sincerity,<br>Ali ❤️</div>
  </div>
 </section>
 
-<!-- ENDING -->
-<section class="final">
- <div style="font-size:65px">🌷🌹🌻</div>
- <h2>One Last Thing...</h2>
- <p class="sub">
- I don't want a perfect answer.
- I only wanted to share something genuine with you.
- </p>
-
- <button class="goldbtn" onclick="revealFinal()">
- A final little message 💌
- </button>
-
- <div id="finalMessage"></div>
+<!-- PAGE 5 -->
+<section class="page" id="page4">
+ <div class="brand">ALI × ARESHEY · THE LAST CHAPTER</div>
+ <div class="eyebrow">One last little thing</div>
+ <div class="finalHeart">❤️</div>
+ <h1 class="script finalNames">Ali & Areshey</h1>
+ <div class="divider"></div>
+ <div class="finalCard">
+  <h2 class="script" style="font-size:37px">A little world, just for you.</h2>
+  <p style="margin-top:14px">Areshey, I don't know what the future holds. I only know that I wanted to create something thoughtful for you, with my own hands and a little bit of imagination.</p>
+  <p style="margin-top:15px;color:#f3d5a0">No expectations. No pressure. Just a sincere little surprise from Ali. 🌷</p>
+ </div>
+ <div style="font-size:32px;margin-top:28px">🌹 🦋 🌙 ✨</div>
+ <button onclick="celebrate()">ONE LAST MAGIC ✨</button>
+ <footer>THE END · MADE BY ALI, FOR ARESHEY</footer>
 </section>
 
-<footer>
- A little garden, a little letter,
- and a thought from Ali. ❤️
- <br><br>
- Made with sincerity.
-</footer>
+<div class="nav" id="nav" style="display:none">
+ <button class="secondary" id="back" onclick="go(current-1)">← BACK</button>
+ <button id="next" onclick="go(current+1)">NEXT PAGE →</button>
+</div>
 
 <script>
+let current=0;
+const total=5;
 const messages=[
- "I don't expect you to understand everything. I only hope we never stop trying to understand each other. ❤️",
- "You don't have to pretend around someone who genuinely wants to listen.",
- "I hope life gives you peaceful days, even on the days when you don't ask for them. 🌻",
- "Some moments don't need big words. Sometimes a little effort says enough.",
- "May you always have a place where you can be completely yourself. 🪻",
- "Whatever your answer, I hope this little garden makes you smile. ❤️"
+ "A rose for a thought that doesn't need a big explanation. — Ali",
+ "A little wish: may your days have more reasons to smile, Areshey.",
+ "Some moments are simple, and that's what makes them special.",
+ "You never have to pretend to be okay. Be yourself, always.",
+ "No special occasion needed. Sometimes flowers are simply flowers.",
+ "A tiny secret: someone put a lot of care into making this little garden."
 ];
 
-function enterGarden(){
- document.getElementById('garden').scrollIntoView({behavior:'smooth'});
+function go(n){
+ if(n<0||n>=total)return;
+ document.getElementById('page'+current).classList.remove('active');
+ current=n;
+ document.getElementById('page'+current).classList.add('active');
+ document.getElementById('nav').style.display=current===0?'none':'flex';
+ document.getElementById('back').style.visibility=current===1?'hidden':'visible';
+ document.getElementById('next').style.display=current===4?'none':'inline-block';
+ document.getElementById('next').textContent=current===3?'REVEAL THE LAST SURPRISE →':'NEXT PAGE →';
+ document.getElementById('progress').style.width=((current+1)/total*100)+'%';
+ window.scrollTo({top:0,behavior:'smooth'});
+ if(current===4)celebrate();
 }
 
-function showFlower(i){
+function flower(i){
  const box=document.getElementById('flowerMessage');
- box.style.display='block';
- box.innerHTML=messages[i];
- box.scrollIntoView({behavior:'smooth',block:'center'});
+ box.textContent=messages[i];
+ box.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{duration:450});
 }
 
 function openLetter(){
  const letter=document.getElementById('letter');
  letter.style.display='block';
- document.getElementById('envelope').style.display='none';
- setTimeout(()=>{
-  letter.scrollIntoView({behavior:'smooth',block:'start'});
- },100);
+ letter.scrollIntoView({behavior:'smooth',block:'center'});
 }
 
-function revealFinal(){
- document.getElementById('finalMessage').innerHTML=
- "You don't owe me an answer, Areshey. I just hope you know that this was made with a genuine heart. <br><br> — Ali ❤️";
+function makeStars(){
+ const area=document.getElementById('stars');
+ for(let i=0;i<90;i++){
+  const s=document.createElement('i');
+  s.className='star';
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.width=s.style.height=(Math.random()*3+1)+'px';
+  s.style.animationDelay=Math.random()*3+'s';
+  area.appendChild(s);
+ }
 }
-
-function petal(){
- const p=document.createElement('div');
- p.className='petals';
- p.innerHTML=['🌸','🌹','🌷','✨','🍃'][Math.floor(Math.random()*5)];
- p.style.left=Math.random()*100+'vw';
- p.style.fontSize=(15+Math.random()*20)+'px';
- p.style.animationDuration=(5+Math.random()*6)+'s';
- document.body.appendChild(p);
- setTimeout(()=>p.remove(),11000);
+function petals(){
+ const area=document.getElementById('effects');
+ const symbols=['🌸','🌷','💗','✨','🌹'];
+ for(let i=0;i<24;i++){
+  const p=document.createElement('span');
+  p.className='particle';
+  p.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDelay=Math.random()*3+'s';
+  p.style.animationDuration=(4+Math.random()*5)+'s';
+  area.appendChild(p);
+  setTimeout(()=>p.remove(),10000);
+ }
 }
-
-setInterval(petal,800);
+function celebrate(){
+ const area=document.getElementById('effects');
+ for(let i=0;i<30;i++){
+  const s=document.createElement('i');
+  s.className='spark';
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*75+'%';
+  s.style.animationDelay=Math.random()*.8+'s';
+  area.appendChild(s);
+  setTimeout(()=>s.remove(),2500);
+ }
+ petals();
+}
+makeStars();
 </script>
-
 </body>
-   </html>
+</html>
 
+                                               </html>
+                                               
