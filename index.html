@@ -4,333 +4,415 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Little Surprise | Ali Areeshay</title>
-
+<title>A Little World for Areshey | Ali Areeshay</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
-:root {
-  --pink:#ffb6d2;
-  --gold:#ffe6a7;
-  --dark:#100b20;
-  --purple:#38204d;
+:root{
+ --pink:#ffb9d5;--gold:#f8e3b0;--cream:#fff2df;
+ --night:#100a20;--purple:#42264e;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;
-  font-family:Poppins,sans-serif;
-  color:white;
-  background:radial-gradient(ellipse at top,#45234e,#170f29 55%,#090814);
-  min-height:100vh;
-  overflow-x:hidden;
+ margin:0;background:var(--night);color:#fff;
+ font-family:Poppins,sans-serif;overflow-x:hidden;
 }
-#stars,.petals{
-  position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0
+#sky,.petals,#fireworks{
+ position:fixed;inset:0;pointer-events:none;overflow:hidden;
 }
+#sky{z-index:0}
+.petals{z-index:2}
+#fireworks{z-index:9}
 .star{
-  position:absolute;background:white;border-radius:50%;
-  animation:twinkle 2s infinite alternate;
+ position:absolute;background:#fff;border-radius:50%;
+ animation:twinkle 2s infinite alternate;
 }
-@keyframes twinkle{to{opacity:.15;transform:scale(.4)}}
+@keyframes twinkle{
+ from{opacity:.9;transform:scale(1)}
+ to{opacity:.15;transform:scale(.4)}
+}
 .petal{
-  position:absolute;top:-30px;opacity:.7;
-  animation:fall linear infinite;
+ position:absolute;top:-35px;animation:fall linear infinite;
+ opacity:.7;
 }
 @keyframes fall{
-  to{transform:translateY(110vh) rotate(650deg);opacity:0}
+ to{transform:translateY(110vh) rotate(650deg);opacity:0}
 }
 .screen{
-  display:none;position:relative;z-index:1;
-  min-height:100vh;padding:45px 18px 35px;
-  text-align:center;align-items:center;justify-content:center;
-  flex-direction:column;
-  animation:screenIn .8s ease both;
+ display:none;position:relative;z-index:1;
+ min-height:100vh;padding:45px 18px 40px;
+ align-items:center;justify-content:center;flex-direction:column;
+ text-align:center;animation:appear .8s ease both;
 }
 .screen.active{display:flex}
-@keyframes screenIn{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
+@keyframes appear{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
 }
-h1,h2{font-weight:500}
-h1{font-size:clamp(35px,8vw,65px);margin:10px 0}
-h2{font-size:clamp(26px,6vw,39px)}
-.script{
-  font-family:'Great Vibes',cursive;
-  color:var(--pink);font-size:clamp(38px,9vw,65px);
+.script{font-family:'Dancing Script',cursive;color:var(--pink)}
+h1{font-size:clamp(39px,9vw,72px);font-weight:400;margin:12px 0}
+h2{font-size:clamp(27px,6vw,43px);font-weight:400;margin:12px 0}
+.eyebrow{
+ color:var(--gold);font-size:10px;letter-spacing:4px;
+ text-transform:uppercase;
 }
-.sub{color:#e9d9ee;line-height:1.8;max-width:580px}
+.glow{text-shadow:0 0 15px #ff9fc9,0 0 45px #c14f96}
+.small{
+ color:#e8dce9;line-height:1.9;font-size:14px;
+ max-width:570px;
+}
 button{
-  border:1px solid #ffcee1;background:linear-gradient(120deg,#d94c91,#8d4bba);
-  color:white;border-radius:40px;padding:14px 25px;
-  font:500 14px Poppins;cursor:pointer;
-  box-shadow:0 0 24px #e65caa55;
-  transition:.3s;
+ border:1px solid #ffd0e3;border-radius:40px;
+ padding:14px 24px;color:#fff;
+ background:linear-gradient(120deg,#bd4785,#7445a0);
+ font:500 13px Poppins;cursor:pointer;
+ box-shadow:0 0 25px #df72b544;transition:.3s;
 }
-button:hover{transform:translateY(-3px);box-shadow:0 0 30px #ff9bc8aa}
-.next{margin-top:28px}
+button:hover{transform:translateY(-3px);box-shadow:0 0 32px #ff9dcc88}
+button:active{transform:scale(.97)}
+.next{margin-top:25px}
 .heart{
-  font-size:75px;display:inline-block;
-  animation:heartbeat 1.5s infinite;
-  filter:drop-shadow(0 0 20px #ff76b5);
+ font-size:75px;filter:drop-shadow(0 0 20px #ff76b6);
+ animation:heartbeat 1.6s infinite;
 }
-@keyframes heartbeat{50%{transform:scale(1.18)}}
+@keyframes heartbeat{50%{transform:scale(1.17)}}
 .glass{
-  width:min(100%,650px);padding:28px 22px;
-  border:1px solid #ffffff27;border-radius:25px;
-  background:#ffffff0d;backdrop-filter:blur(12px);
-  box-shadow:0 15px 60px #0004;
+ width:min(100%,680px);padding:27px 20px;
+ border:1px solid #ffffff2b;border-radius:26px;
+ background:linear-gradient(145deg,#ffffff16,#ffffff05);
+ backdrop-filter:blur(12px);box-shadow:0 15px 60px #0005;
 }
-.eyebrow{letter-spacing:4px;color:var(--gold);font-size:11px}
 .garden{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:13px;width:min(100%,650px);margin:25px auto 0;
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:12px;width:min(100%,650px);margin:25px auto;
 }
 .flower{
-  min-height:120px;border-radius:18px;
-  background:linear-gradient(145deg,#ffffff18,#e99acb12);
-  border:1px solid #ffffff28;
-  display:flex;align-items:center;justify-content:center;
-  flex-direction:column;gap:7px;padding:12px;
-  cursor:pointer;transition:.35s;
+ min-height:116px;border:1px solid #ffffff2b;
+ border-radius:19px;background:linear-gradient(145deg,#ffffff19,#ffffff08);
+ display:flex;flex-direction:column;align-items:center;
+ justify-content:center;gap:7px;padding:10px;cursor:pointer;
+ transition:.35s;
 }
-.flower:hover{transform:translateY(-7px) scale(1.04);background:#ffb6d229}
-.flower .emoji{font-size:39px;animation:bloom 2.5s ease-in-out infinite}
-.flower:nth-child(even) .emoji{animation-delay:.7s}
+.flower:hover{transform:translateY(-6px) scale(1.035);background:#e991c32c}
+.flower span{font-size:38px;animation:bloom 2.6s ease-in-out infinite}
+.flower:nth-child(even) span{animation-delay:.7s}
 @keyframes bloom{
-  0%,100%{transform:scale(.9) rotate(-5deg)}
-  50%{transform:scale(1.15) rotate(5deg)}
+ 0%,100%{transform:scale(.92) rotate(-5deg)}
+ 50%{transform:scale(1.16) rotate(6deg)}
 }
-.flower small{font-size:10px;color:#f9d7e9;letter-spacing:1px}
-#messageModal{
-  display:none;position:fixed;inset:0;z-index:10;
-  background:#090514dd;align-items:center;justify-content:center;padding:20px;
+.flower small{font-size:9px;letter-spacing:2px;color:#f8d8e8}
+#modal{
+ display:none;position:fixed;inset:0;z-index:8;
+ background:#090512eF;align-items:center;justify-content:center;
+ padding:18px;
 }
-#messageModal.show{display:flex}
-.message-card{
-  max-width:420px;width:100%;padding:30px 24px;
-  background:linear-gradient(145deg,#42234f,#21172f);
-  border:1px solid #ffb6d277;border-radius:25px;
-  box-shadow:0 0 50px #ff83c455;
-  animation:screenIn .4s ease;
+#modal.show{display:flex}
+.modal-card{
+ width:min(100%,420px);padding:30px 24px;
+ border-radius:25px;background:linear-gradient(145deg,#49264f,#1c1730);
+ border:1px solid #f5b7d788;box-shadow:0 0 55px #ed8ac455;
+ animation:appear .4s ease;
 }
-.message-card p{line-height:1.9;color:#f8e8f2}
-.dinner-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:15px;
-  margin:25px auto;width:min(100%,650px);
+.modal-card p{line-height:1.9;color:#f8e8f1}
+.dinner{
+ display:grid;grid-template-columns:1fr 1fr;gap:14px;
+ width:min(100%,650px);margin:23px auto;
 }
-.food-card{
-  background:#ffffff12;border:1px solid #ffffff2b;
-  border-radius:20px;overflow:hidden;padding-bottom:15px;
+.food{
+ border:1px solid #ffffff2b;border-radius:20px;
+ overflow:hidden;background:#ffffff12;padding-bottom:13px;
 }
-.food-card img{width:100%;height:190px;object-fit:cover;display:block}
-.food-card h3{margin:12px 5px 4px;font-weight:500}
-.food-card p{font-size:11px;color:#e7d5e7;margin:0 8px}
-.food-card.pepsi img{object-fit:contain;background:#fff;padding:8px}
-.letter{
-  text-align:left;line-height:2;color:#f6eaf1;
-  white-space:pre-line;font-size:14px;
+.food img{width:100%;height:175px;object-fit:cover;display:block}
+.food h3{font-size:15px;font-weight:500;margin:12px 5px 3px}
+.food p{font-size:10px;color:#ead9e9;margin:0 6px}
+.pepsi-art{
+ height:175px;background:linear-gradient(120deg,#f5f5f5,#ddd);
+ display:flex;align-items:center;justify-content:center;
+}
+.can{
+ width:75px;height:135px;border-radius:13px;
+ background:linear-gradient(90deg,#071f67,#1263c9,#09236b);
+ box-shadow:inset 7px 0 8px #ffffff44,0 8px 15px #0004;
+ display:flex;align-items:center;justify-content:center;
+ border:2px solid #c8d8ed;transform:rotate(-5deg);
+}
+.can span{
+ background:#fff;color:#1251a0;border-radius:50%;
+ width:55px;height:55px;display:flex;align-items:center;
+ justify-content:center;font-weight:700;font-size:11px;
+ border:3px solid #e92743;
 }
 .envelope{
-  font-size:80px;cursor:pointer;
-  animation:float 2s ease-in-out infinite;
+ font-size:92px;cursor:pointer;display:inline-block;
+ filter:drop-shadow(0 0 22px #f4a5d0);
+ animation:float 2s ease-in-out infinite;
 }
-@keyframes float{50%{transform:translateY(-12px)}}
-#letterText{display:none}
-#letterText.open{display:block;animation:screenIn 1s ease}
-.final-hearts{font-size:30px;letter-spacing:10px;animation:heartbeat 2s infinite}
-.credit{font-size:9px;color:#bcaac5;margin-top:20px}
-@media(max-width:430px){
- .garden{gap:8px}
- .flower{min-height:105px;padding:8px}
- .flower .emoji{font-size:33px}
- .food-card img{height:145px}
- .screen{padding-top:35px}
+@keyframes float{50%{transform:translateY(-13px)}}
+.letter{
+ display:none;text-align:left;background:#fff1db;color:#493449;
+ border-radius:5px;padding:26px 23px;width:min(100%,580px);
+ box-shadow:0 12px 45px #0008;transform-origin:top center;
+}
+.letter.open{display:block;animation:unfold 1s ease both}
+@keyframes unfold{
+ from{opacity:0;transform:perspective(700px) rotateX(-45deg) scaleY(.4)}
+ to{opacity:1;transform:perspective(700px) rotateX(0) scaleY(1)}
+}
+.letter h3{
+ font:32px 'Dancing Script',cursive;color:#98486d;margin:0 0 14px;
+}
+.letter p{
+ font:19px 'Dancing Script',cursive;line-height:1.7;
+ white-space:pre-line;
+}
+.signature{
+ font:37px 'Dancing Script',cursive;color:#a04470;
+ text-align:right;margin-top:22px;
+}
+.final-hearts{font-size:35px;letter-spacing:8px;color:#ffc3df}
+.spark{
+ position:absolute;width:5px;height:5px;border-radius:50%;
+ background:#ffe4a6;box-shadow:0 0 12px 4px #ff9bc9;
+ animation:spark 1.5s ease-out forwards;
+}
+@keyframes spark{
+ from{transform:translate(0,0) scale(1);opacity:1}
+ to{transform:translate(var(--x),var(--y)) scale(0);opacity:0}
+}
+@media(max-width:420px){
+ .garden{gap:8px}.flower{min-height:100px}.flower span{font-size:33px}
+ .food img,.pepsi-art{height:140px}
+ .letter p{font-size:17px}
 }
 </style>
 </head>
-
 <body>
-<div id="stars"></div>
+
+<div id="sky"></div>
 <div class="petals" id="petals"></div>
+<div id="fireworks"></div>
 
-<!-- PAGE 1 -->
-<section class="screen active" id="page1">
-  <div class="eyebrow">A LITTLE SOMETHING FROM THE HEART</div>
-  <div class="heart">♥</div>
-  <h1 class="script">Ali Areeshay</h1>
-  <h2 style="font-size:22px;letter-spacing:3px">A SURPRISE FOR ARESHEY</h2>
-  <p class="sub">Some moments deserve their own little universe.<br>
-  So I made one. Just for you.</p>
-  <button class="next" onclick="goTo(2)">Open Your Surprise ✨</button>
+<!-- OPENING -->
+<section class="screen active" id="p1">
+ <div class="eyebrow">A LITTLE SURPRISE FROM THE HEART</div>
+ <div class="heart">♥</div>
+ <h1 class="script glow">A Little Universe</h1>
+ <h2 style="font-size:19px;letter-spacing:3px">FOR ARESHEY</h2>
+ <p class="small">
+  Not an ordinary page. Not an ordinary hello.<br>
+  Just a little world, created with care.
+ </p>
+ <p class="script" style="font-size:32px">Made by Ali Areeshay</p>
+ <button class="next" onclick="go(2)">Step Into Your Surprise ✨</button>
 </section>
 
-<!-- PAGE 2 -->
-<section class="screen" id="page2">
-  <div class="eyebrow">A GARDEN OF LITTLE THOUGHTS</div>
-  <h2 class="script">12 Little Flowers</h2>
-  <p class="sub">Har flower ke andar ek chhota sa message hai.<br>Choose any one and let it bloom. 🌸</p>
-
-  <div class="garden" id="garden"></div>
-  <button class="next" onclick="goTo(3)">A Little More Magic Awaits ✨</button>
+<!-- FLOWERS -->
+<section class="screen" id="p2">
+ <div class="eyebrow">TWELVE FLOWERS • TWELVE LITTLE THOUGHTS</div>
+ <h1 class="script">A Garden for You</h1>
+ <p class="small">Choose a flower. Tap it gently.<br>
+ Each one has a little message waiting for you. 🌷</p>
+ <div class="garden" id="garden"></div>
+ <button class="next" onclick="go(3)">A Little More Magic Awaits ✨</button>
 </section>
 
-<!-- FLOWER MESSAGE POPUP -->
-<div id="messageModal" onclick="closeMessage(event)">
-  <div class="message-card">
-    <div class="script" id="messageTitle">A little thought</div>
-    <div style="font-size:42px" id="messageFlower">🌷</div>
-    <p id="messageBody"></p>
-    <button onclick="hideMessage()">Keep This Thought 💗</button>
-  </div>
+<!-- FLOWER MESSAGE -->
+<div id="modal" onclick="if(event.target===this)closeFlower()">
+ <div class="modal-card">
+  <div class="script" style="font-size:37px" id="mtitle"></div>
+  <div style="font-size:50px" id="mflower"></div>
+  <p id="mtext"></p>
+  <button onclick="closeFlower()">Keep This Little Thought 💗</button>
+ </div>
 </div>
 
-<!-- PAGE 3 -->
-<section class="screen" id="page3">
-  <div class="eyebrow">A LITTLE DINNER PLAN</div>
-  <h2 class="script">Your Kind of Evening</h2>
-  <p class="sub">Good food, a relaxed evening and a little time to enjoy.</p>
+<!-- DINNER -->
+<section class="screen" id="p3">
+ <div class="eyebrow">A LITTLE DINNER IDEA</div>
+ <h1 class="script">An Evening to Enjoy</h1>
+ <p class="small">A little something inspired by your choice.<br>
+ Good food, a relaxed evening and a chilled drink.</p>
 
-  <div class="dinner-grid">
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900" alt="Delicious pizza">
-      <h3>Pizza 🍕</h3>
-      <p>Cheeseburger flavour, just as requested.</p>
-    </div>
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900" alt="Fresh salad">
-      <h3>Fresh Salad 🥗</h3>
-      <p>A fresh little side for dinner.</p>
-    </div>
-    <div class="food-card pepsi">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pepsi_Can.jpg?width=700" alt="Real Pepsi can">
-      <h3>Pepsi 🥤</h3>
-      <p>And something chilled.</p>
-    </div>
-    <div class="food-card">
-      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900" alt="Cozy dinner setting">
-      <h3>A Cozy Evening ✨</h3>
-      <p>No rush. Just a nice evening.</p>
-    </div>
+ <div class="dinner">
+  <div class="food">
+   <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900" alt="Pizza">
+   <h3>Cheeseburger Pizza 🍕</h3>
+   <p>Your requested pizza flavour.</p>
   </div>
-  <button class="next" onclick="goTo(4)">There's A Letter For You 💌</button>
+  <div class="food">
+   <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900" alt="Fresh salad">
+   <h3>Fresh Salad 🥗</h3>
+   <p>A fresh little side.</p>
+  </div>
+  <div class="food">
+   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pepsi_Can.jpg"
+    alt="Pepsi can" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+   <div class="pepsi-art" style="display:none">
+    <div class="can"><span>PEPSI</span></div>
+   </div>
+   <h3>Chilled Pepsi 🥤</h3>
+   <p>Because dinner needs a cool companion.</p>
+  </div>
+  <div class="food">
+   <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900" alt="Dinner setting">
+   <h3>A Cozy Setting ✨</h3>
+   <p>A little time to enjoy the moment.</p>
+  </div>
+ </div>
+ <button class="next" onclick="go(4)">There's a Letter for You 💌</button>
 </section>
 
-<!-- PAGE 4 -->
-<section class="screen" id="page4">
-  <div class="eyebrow">SOMETHING I WANTED TO SAY</div>
-  <h2 class="script">A Letter, From Ali</h2>
-  <p class="sub">Tap the envelope whenever you're ready.</p>
-  <div class="envelope" onclick="openLetter()">💌</div>
-  <div class="glass" id="letterText">
-    <div class="letter">Dear Areshey,
+<!-- LETTER -->
+<section class="screen" id="p4">
+ <div class="eyebrow">A FEW WORDS, WRITTEN WITH CARE</div>
+ <h1 class="script">A Letter for Areshey</h1>
+ <p class="small">Some things are nicer when they're written.<br>
+ Tap the envelope to open your letter.</p>
+ <div class="envelope" id="env" onclick="openLetter()">💌</div>
+ <p class="small" id="hint">A little note is waiting inside...</p>
 
-I wanted to make something a little different for you.
+ <div class="letter" id="letter">
+  <h3>Dear Areshey,</h3>
+  <p>
+Aaj hum mile hain, aur shayad abhi ek doosre ko jaanne ka safar shuru hi hua hai.
 
-Not because I expect anything in return, and not because I want to put you in a difficult position.
+Main nahi chahta ke chand mulaqaton ko bade-bade daawon ya kahaniyon mein badal doon. Kuch cheezon ko waqt ke saath apni jagah banane dena zyada khoobsurat hota hai.
 
-I just wanted to create a moment that feels thoughtful, something you might remember with a smile.
+Lekin ek chhoti si baat zaroor kehna chahta hoon.
 
-I know words can be easy to say. So instead of making big promises, I wanted to put a little effort into something real.
+Main chahta tha ke tumhare liye kuch aisa banaun jo rozmarra ki cheezon se thoda alag ho. Isliye ye website, ye baarah flowers, har flower ka apna message, dinner ka chhota sa plan aur ye letter.
 
-The flowers, the dinner, this little website — each part was made with care.
+Har detail perfect ho, ye zaroori nahi. Lekin har detail mein meri apni mehnat aur ek sachchi si niyyat zaroor hai.
 
-If this made you smile even for a moment, then it was worth making.
+Mujhe nahi pata tum is surprise ko dekh kar kya mehsoos karogi. Main tumhari taraf se kuch assume bhi nahi karna chahta.
 
-And whatever you feel, your answer will be respected. No pressure, no expectations.
+Bas meri taraf se ye ek chhoti si koshish hai — ke tumhare chehre par ek muskurahat aa jaye, aur tumhein ek aisa moment mile jo thoda different ho.
 
-Thank you for taking the time to see this.
+Zindagi mein har mulaqat ka koi bada matlab ho, zaroori nahi. Kabhi kabhi kisi naye insaan ke liye ek khoobsurat gesture karna bhi apne aap mein kaafi hota hai.
 
-With sincerity,
-Ali Areeshay ♥</div>
-  </div>
-  <button class="next" onclick="goTo(5)">One Last Little Surprise 🌙</button>
+Agar tumhein is poori chhoti si duniya mein koi ek flower, ek line ya ek detail pasand aa jaye, toh samajhna meri mehnat kamyab ho gayi.
+
+Tumhari marzi, tumhara waqt aur tumhari feelings apni jagah mukammal ahmiyat rakhti hain. Is surprise ke peeche koi pressure ya expectation nahi.
+
+Bas ek nayi mulaqat ke naam, ek achhe moment ke naam, aur ek muskurahat ke naam.
+
+Thank you for being a part of this little surprise.
+  </p>
+  <div class="signature">With sincerity,<br>Ali Areeshay ♥</div>
+ </div>
+ <button class="next" onclick="go(5)">One Last Little Surprise 🌙</button>
 </section>
 
-<!-- PAGE 5 -->
-<section class="screen" id="page5">
-  <div class="final-hearts">♡ ♥ ♡</div>
-  <h1 class="script">A Moment to Remember</h1>
-  <div class="heart">🌹</div>
-  <h2 style="font-size:23px">Made with care by<br><span class="script">Ali Areeshay</span></h2>
-  <p class="sub">No expectations. No pressure.<br>
-  Just a sincere little surprise, made especially for you.</p>
-  <p style="color:#ffd8e8">Thank you for being here. ✨</p>
-  <button onclick="goTo(1)">Experience It Again ↻</button>
+<!-- FINAL -->
+<section class="screen" id="p5">
+ <div class="final-hearts">♡ ♥ ♡</div>
+ <h1 class="script glow">And That's My Little Surprise</h1>
+ <div class="heart">🌹</div>
+ <h2 class="script" style="font-size:43px">For Areshey</h2>
+ <p class="small">
+  A little garden. A little dinner.<br>
+  A letter from the heart.<br><br>
+  No pressure. No expectations.<br>
+  Just a thoughtful moment, made by Ali.
+ </p>
+ <p class="script" style="font-size:35px">Ali Areeshay</p>
+ <button onclick="go(1)">Experience It Again ↻</button>
+ <div class="eyebrow" style="margin-top:25px">MADE WITH CARE • 2026</div>
 </section>
 
 <script>
-// Create twinkling stars
-const starBox=document.getElementById('stars');
-for(let i=0;i<75;i++){
-  const s=document.createElement('span');
-  s.className='star';
-  s.style.left=Math.random()*100+'%';
-  s.style.top=Math.random()*100+'%';
-  s.style.width=s.style.height=(Math.random()*3+1)+'px';
-  s.style.animationDelay=Math.random()*3+'s';
-  starBox.appendChild(s);
+/* Background stars */
+const sky=document.getElementById('sky');
+for(let i=0;i<85;i++){
+ const s=document.createElement('i');
+ s.className='star';
+ s.style.left=Math.random()*100+'%';
+ s.style.top=Math.random()*100+'%';
+ const size=1+Math.random()*3;
+ s.style.width=size+'px';s.style.height=size+'px';
+ s.style.animationDelay=Math.random()*3+'s';
+ sky.appendChild(s);
 }
 
-// Falling petals
-const petalBox=document.getElementById('petals');
-for(let i=0;i<18;i++){
-  const p=document.createElement('span');
-  p.className='petal';
-  p.textContent=['🌸','🌷','✿','♥'][i%4];
-  p.style.left=Math.random()*100+'%';
-  p.style.animationDuration=(8+Math.random()*12)+'s';
-  p.style.animationDelay=(-Math.random()*15)+'s';
-  p.style.fontSize=(12+Math.random()*14)+'px';
-  petalBox.appendChild(p);
+/* Falling petals */
+const petals=document.getElementById('petals');
+for(let i=0;i<17;i++){
+ const p=document.createElement('span');
+ p.className='petal';
+ p.textContent=['🌸','🌷','✿','♥'][i%4];
+ p.style.left=Math.random()*100+'%';
+ p.style.animationDuration=(9+Math.random()*12)+'s';
+ p.style.animationDelay=(-Math.random()*15)+'s';
+ p.style.fontSize=(12+Math.random()*13)+'px';
+ petals.appendChild(p);
 }
 
-// 12 flower messages
+/* Flower messages */
 const flowers=[
- ['🌹','A little reminder','Some people make an ordinary day feel a little more special.'],
- ['🌷','A soft thought','I hope life gives you plenty of reasons to smile.'],
- ['🌻','Stay bright','Never lose the little things that make you uniquely you.'],
- ['🌸','A wish','May beautiful things find their way into your days.'],
- ['🌺','A moment','Not every lovely moment needs a reason. Some are simply gifts.'],
- ['🪻','A quiet thought','Even the smallest gestures can carry a lot of meaning.'],
- ['🌼','A smile','I hope this little flower brought one to your face.'],
- ['💐','A bouquet','A dozen flowers, each carrying a different little thought.'],
- ['🪷','A reminder','You deserve kindness, patience and genuine respect.'],
- ['🌹','A thank you','Thank you for giving this little surprise a moment of your time.'],
- ['🌷','A wish for you','May your next chapter be full of peace and lovely surprises.'],
- ['🌸','The last flower','This one simply says: I made all of this with care. — Ali']
+ ['🌹','A Gentle Reminder','Some moments become special because someone took the time to make them thoughtful.'],
+ ['🌷','A Wish for You','May your days bring peace, laughter and little reasons to smile.'],
+ ['🌻','Keep Shining','Keep making room in life for the things that make you happy.'],
+ ['🌸','A Soft Thought','Sometimes a small gesture says more than a long speech.'],
+ ['🌺','A Little Magic','May ordinary days surprise you in the loveliest ways.'],
+ ['🪻','Kindness','You deserve kindness, respect and the freedom to be yourself.'],
+ ['🌼','A Smile','If this little flower brought a smile, it has done its job.'],
+ ['💐','Twelve Thoughts','Twelve flowers, each carrying a different little thought.'],
+ ['🪷','A Peaceful Wish','May your path ahead be full of calm and beautiful possibilities.'],
+ ['🌹','A Thank You','Thank you for giving this small surprise a moment of your time.'],
+ ['🌷','A New Chapter','Every new meeting has its own little story. May yours be a lovely one.'],
+ ['🌸','The Last Flower','This whole garden was made with care. A little thought from Ali, just for you. ♥']
 ];
 
 const garden=document.getElementById('garden');
 flowers.forEach((f,i)=>{
-  const card=document.createElement('div');
-  card.className='flower';
-  card.innerHTML=`<span class="emoji">${f[0]}</span><small>FLOWER ${i+1}</small>`;
-  card.onclick=()=>showMessage(i);
-  garden.appendChild(card);
+ const el=document.createElement('div');
+ el.className='flower';
+ el.innerHTML='<span>'+f[0]+'</span><small>FLOWER '+(i+1)+'</small>';
+ el.addEventListener('click',()=>{
+  document.getElementById('mtitle').textContent=f[1];
+  document.getElementById('mflower').textContent=f[0];
+  document.getElementById('mtext').textContent=f[2];
+  document.getElementById('modal').classList.add('show');
+ });
+ garden.appendChild(el);
 });
 
-function showMessage(i){
-  document.getElementById('messageTitle').textContent=flowers[i][1];
-  document.getElementById('messageFlower').textContent=flowers[i][0];
-  document.getElementById('messageBody').textContent=flowers[i][2];
-  document.getElementById('messageModal').classList.add('show');
+function closeFlower(){
+ document.getElementById('modal').classList.remove('show');
 }
-function hideMessage(){
-  document.getElementById('messageModal').classList.remove('show');
-}
-function closeMessage(e){
-  if(e.target.id==='messageModal')hideMessage();
-}
-function goTo(n){
-  hideMessage();
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById('page'+n).classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+function go(n){
+ closeFlower();
+ document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+ document.getElementById('p'+n).classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+ if(n===5)makeFireworks();
 }
 function openLetter(){
-  document.getElementById('letterText').classList.add('open');
+ const letter=document.getElementById('letter');
+ letter.classList.add('open');
+ document.getElementById('env').style.display='none';
+ document.getElementById('hint').style.display='none';
+ setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'center'}),150);
+}
+
+/* Final sparkle burst */
+function makeFireworks(){
+ const box=document.getElementById('fireworks');
+ box.innerHTML='';
+ for(let i=0;i<55;i++){
+  const spark=document.createElement('i');
+  spark.className='spark';
+  spark.style.left=(10+Math.random()*80)+'%';
+  spark.style.top=(15+Math.random()*65)+'%';
+  spark.style.setProperty('--x',(Math.random()*180-90)+'px');
+  spark.style.setProperty('--y',(Math.random()*180-90)+'px');
+  spark.style.animationDelay=Math.random()*.8+'s';
+  box.appendChild(spark);
+ }
+ setTimeout(()=>box.innerHTML='',2600);
 }
 </script>
 </body>
-</html>
+  </html>
   
